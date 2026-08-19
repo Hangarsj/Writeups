@@ -116,6 +116,8 @@ The red team test used other Office applications and child processes that my rul
 Based on the failed red team tests, I expanded the rule to cover more Office applications and child processes.
 I added`OUTLOOK.EXE` and `POWERPNT.EXE` as parent processes, and `powershell.exe` and `pwsh.exe` as child processes.
 
+![splunk4](images/Splunk4.jpeg) 
+
 For the filter, i tried to be more specific and added `ParentCommandLine`, to check that Excel had opened the approved template. 
 
 ```yaml
